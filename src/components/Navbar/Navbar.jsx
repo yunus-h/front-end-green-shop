@@ -16,10 +16,16 @@ const NavBar = () => {
             // if the user logged in
             <ul>
                 <li>
-                    Welcome, {user.name}
+                    Welcome, {user.name} - {user.role}
                 </li>
                 <li>
-                    <Link to = '/'>Dasboard</Link>
+                    <Link to = '/'>Home</Link>
+                </li>
+                <li>
+                  <Link to= '/products'>Products</Link>
+                </li>
+                <li>
+                  <Link to= '/products/new'>New Product</Link>
                 </li>
                 <li>
                     <Link to='/' onClick={handleSignOut}>Sign Out</Link>
@@ -29,9 +35,9 @@ const NavBar = () => {
         ) : (
             //if the user NOT logged in
             <ul>
-                <li>
+                {/* <li>
                 <Link to = '/'>Home</Link>
-                </li>
+                </li> */}
                 <li>
                     <Link to='/sign-up'>Register</Link>
                 </li>

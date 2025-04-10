@@ -7,18 +7,8 @@ import { UserContext } from "../../contexts/UserContext";
 const SignInForm = () =>{
     const navigate = useNavigate()
     const emptyFormData = {
-        // role: 'buyer',
         username: '',
         password: '',
-        // passwordConf:'',
-        // name:'',
-        // email: '',
-        // address: '',
-        // city:'',
-        // state:'',
-        // country: '',
-        // zip:'',
-        // phone: '',
     }
 
     const [formData, setFormData] = useState(emptyFormData)
