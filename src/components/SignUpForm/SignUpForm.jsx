@@ -1,8 +1,9 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
-
 import { signUp } from "../../services/authService";
 import { UserContext } from "../../contexts/UserContext";
+
+import styles from "./SignUpForm.module.css"
 
 const SignUpForm = () =>{
     const navigate = useNavigate()
@@ -60,15 +61,24 @@ const SignUpForm = () =>{
     }
 
     return (
-        <main>
+        <main className={styles.container}>
             <h1>Registration Form</h1>
             <p>{message}</p>
+          
 
+          
             <form onSubmit={handleSubmit}>
-
-                <p>*Select account type: </p>
                 <div>
-                    <label htmlFor="role"> 
+                    <p>*required</p>
+                </div>
+
+                <div className={styles.accountType}>
+                    <div>
+                        <label htmlFor="role">Select account type*:</label>
+                    </div>
+                    <div>
+                        
+                        <label htmlFor="role">Buyer</label>
                         <input
                             type="radio"
                             id="buyer"
@@ -76,13 +86,13 @@ const SignUpForm = () =>{
                             value="buyer"
                             checked={formData.role === "buyer"}
                             onChange={handleChange}
+                            className={styles.radioButton}
                         />
-                    Buyer
-                    </label>
-                </div>
+                       
+                    </div>
 
-                <div>
-                    <label htmlFor="role"> 
+                    <div>
+                        <label htmlFor="role">Seller </label>
                         <input
                             type="radio"
                             id="seller"
@@ -90,13 +100,14 @@ const SignUpForm = () =>{
                             value="seller"
                             checked={formData.role === "seller"}
                             onChange={handleChange}
+                            className={styles.radioButton}
                         />
-                    Seller
-                    </label>
+                        
+                    </div>
                 </div>
 
                 <div>
-                    <label htmlFor="username">*Username: </label>
+                    <label htmlFor="username">Username*: </label>
                     <input 
                         type="text"
                         id="username"
@@ -108,7 +119,7 @@ const SignUpForm = () =>{
                 </div>
 
                 <div>
-                    <label htmlFor="password">*Password: </label>
+                    <label htmlFor="password">Password*: </label>
                     <input 
                         type="password"
                         id="password"
@@ -120,7 +131,7 @@ const SignUpForm = () =>{
                 </div>
 
                 <div>
-                    <label htmlFor="passwordConf">*Confirm Password: </label>
+                    <label htmlFor="passwordConf">*Confirm Password*: </label>
                     <input 
                         type="password"
                         id="passwordConf"
@@ -132,7 +143,7 @@ const SignUpForm = () =>{
                 </div>
 
                 <div>
-                    <label htmlFor="name">*Name: </label>
+                    <label htmlFor="name">Name*: </label>
                     <input 
                         type="text"
                         id="name"
@@ -144,7 +155,7 @@ const SignUpForm = () =>{
                 </div>
      
                 <div>
-                    <label htmlFor="email">*E-mail: </label>
+                    <label htmlFor="email">E-mail*: </label>
                     <input 
                         type="email"
                         id="email"
@@ -220,18 +231,12 @@ const SignUpForm = () =>{
                         onChange={handleChange}
                     />
                 </div>
-                <div>
-                    <p>*required</p>
-                </div>
                 
                 <div>
                     <button disabled={isFormInvalid()} type="submit">Register</button>
                     <button onClick={() => navigate('/')}>Cancel</button>
                 </div>
-
-
             </form>
-
         </main>
     )
 }

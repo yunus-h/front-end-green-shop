@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
-
 import { signIn } from "../../services/authService";
 import { UserContext } from "../../contexts/UserContext";
+import styles from "./SignInForm.module.css"
 
 const SignInForm = () =>{
     const navigate = useNavigate()
@@ -46,7 +46,7 @@ const SignInForm = () =>{
     }
 
     return (
-        <main>
+        <main className={styles.container}>
             <h1>Sign In Form</h1>
             <p>{message}</p>
 

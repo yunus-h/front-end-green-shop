@@ -2,8 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from 'react-router'
 
 import * as productService from '../../services/productService'
-
-
+import styles from "./ProductForm.module.css"
 
 const ProductForm = (props) => {
     const { productId } = useParams();
@@ -45,11 +44,10 @@ const ProductForm = (props) => {
           } else {
             props.handleAddProduct(formData);
           }
-
     }
 
     return (
-        <main>
+        <main className={styles.container}>
             <h1>{productId ? 'Edit Product' : 'New Product'}</h1>
 
             <form onSubmit={handleSubmit}>
@@ -59,7 +57,7 @@ const ProductForm = (props) => {
                     required
                     name="title"
                     id="title"
-                    value={formData.tile}
+                    value={formData.title}
                     onChange={handleChange}
                 />
 
@@ -89,12 +87,12 @@ const ProductForm = (props) => {
                     <option value="Others">Others</option>
                 </select>
 
-                <label htmlFor="description">Description: </label>
-                <input 
-                    type="text" 
+                <label htmlFor='description-input'>Description: </label>
+                <textarea
                     required
-                    name="description"
-                    id="description"
+                    type='description'
+                    name='description'
+                    id='description-input'
                     value={formData.description}
                     onChange={handleChange}
                 />

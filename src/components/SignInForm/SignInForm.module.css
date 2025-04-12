@@ -1,0 +1,51 @@
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .container input {
+    margin: 7px 0px 7px 0px;
+  }
+
+  .container input,
+  button {
+    width: 60%;
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid rgb(220, 220, 220);
+    height: 9px;
+  }
+
+  .container form div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: auto;
+    align-content: center;
+  }
+
+  .container label {
+    font-weight: 600;
+    margin: 7px 0px 14px 0px;
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .container button {
+    color: white;
+    font-weight: 600;
+    background: #0b6430;
+    margin: 21px 40px 0px 0px;
+    align-items: center;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  

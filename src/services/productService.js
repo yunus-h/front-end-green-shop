@@ -62,37 +62,68 @@ const createReview = async (productId, reviewFormData) => {
     } catch (error) {
       console.log(error);
     }
-  };
+};
 
-  const deleteProduct = async (productId) => {
+const deleteProduct = async (productId) => {
     try {
-      const res = await fetch(`${BASE_URL}/${productId}`, {
+        const res = await fetch(`${BASE_URL}/${productId}`, {
         method: 'DELETE',
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
-      });
-      return res.json();
+        });
+        return res.json();
     } catch (error) {
-      console.log(error);
+        console.log(error);
+    }
+};
+
+const update = async(productId, productFormData) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${productId}`, {
+        method: 'PUT',
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productFormData),
+        });
+        return res.json();
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+const deleteReview = async (productId, reviewId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${productId}/reviews/${reviewId}`, {
+        method: 'DELETE',
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        });
+        return res.json();
+    } catch (error) {
+        console.log(error);
     }
   };
 
-  const update = async(productId, productFormData) => {
+  const updateReview = async (productId, reviewId, reviewFormData) => {
     try {
-      const res = await fetch(`${BASE_URL}/${productId}`, {
+      const res = await fetch(`${BASE_URL}/${productId}/reviews/${reviewId}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(productFormData),
+        body: JSON.stringify(reviewFormData),
       });
       return res.json();
     } catch (error) {
       console.log(error);
     }
-  }
+  };
+  
 
 export {
     index,
@@ -101,4 +132,6 @@ export {
     createReview,
     deleteProduct,
     update,
+    deleteReview,
+    updateReview,
 }

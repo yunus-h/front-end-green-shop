@@ -1,0 +1,126 @@
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .container section {
+    padding: 0px 22px;
+  }
+  
+  .container > section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .container section > img {
+    width: 25%;
+    min-width: 460px;
+    margin-bottom: 80px;
+  }
+  
+  .greeting {
+    height: 700px;
+    background-color: rgb(155, 201, 170);
+    box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .greeting header {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    padding: 50px 0px;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .greeting article {
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .container section > header * {
+    margin: 0px;
+    font-weight: 600;
+  }
+  
+  .container section > header h1 {
+    margin: 5px;
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+  
+  .container section > header h3 {
+    font-size: 16px;
+    color: #1c8f2f;
+  }
+  
+  .container article header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .container footer {
+    margin: 0;
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer {
+    padding: 50px 0px;
+    display: flex;
+    background: white;
+    background: #131415;
+    justify-content: center;
+    color: rgb(220, 220, 220);
+    border-top: 1px solid rgb(220, 220, 220);
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .greeting {
+      height: 420px;
+    }
+  }
+  
+  @media only screen and (max-width: 912px) {
+    .greeting {
+      height: 460px;
+    }
+  }
+  
+  @media only screen and (max-width: 540px) {
+    .greeting {
+      height: 560px;
+    }
+  }
+  
+  @media only screen and (max-width: 414px) {
+    .greeting {
+      height: 660px;
+    }
+    .container section > img {
+      min-width: 340px;
+    }
+  }
+  
+  @media only screen and (max-width: 300px) {
+    .greeting {
+      height: 800px;
+    }
+    .container section > img {
+      min-width: 340px;
+    }
+  }
+  

@@ -8,12 +8,11 @@ import SignUpForm from './components/SignUpForm/SignUpForm'
 import SignInForm from './components/SignInForm/SignInForm';
 import Landing from './components/Landing/Landing';
 import Dashboard from './components/Dashboard/Dashboard';
-import Header from './components/Header/Header';
-import Mode from './components/Mode/Mode';
 import { UserContext } from './contexts/UserContext'; 
 import ProductList from './components/ProductList/ProductList';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import ProductForm from './components/ProductForm/ProductForm';
+import ReviewForm from './components/ReviewForm/ReviewForm';
 
 import * as productService from './services/productService'
 
@@ -42,7 +41,6 @@ const App = () => {
   }
 
   const handleDeleteProduct = async (productId) => {
-    console.log('productId', productId);
     setProducts(products.filter((product) => product._id !== productId));
     navigate('/products');
   };
@@ -55,8 +53,6 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      <Mode />
       <NavBar />
  
       <Routes>
@@ -69,10 +65,6 @@ const App = () => {
               element={<ProductList products={products}/>} 
             />
 
-            <Route 
-              path='/products/:productId' 
-              element={<ProductDetails />} 
-            />
 
             <Route 
               path='/products/new' 
@@ -88,6 +80,12 @@ const App = () => {
               path='/products/:productId/edit'
               element={<ProductForm handleUpdateProduct={handleUpdateProduct}/>}
             />
+
+            <Route
+              path='/products/:productId/reviews/:reviewId/edit'
+              element={<ReviewForm />}
+            />
+            
           </>
         ) : (
           <>
