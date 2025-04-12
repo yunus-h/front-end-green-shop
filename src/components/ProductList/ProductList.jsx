@@ -17,7 +17,7 @@ const ProductList = (props) => {
                             <br />
                             <p>Category: {product.category}</p>
                             <p>Price: ${product.price}</p>
-                            <p>Stock: {product.stock}</p>  
+                            <p>Stock: {product.stock? product.stock :"unavailable" }</p>  
                             <p>Sell by: {product.author.name}</p>
                         </div>        
                     </header>

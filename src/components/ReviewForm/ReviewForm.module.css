@@ -20,6 +20,10 @@
     font-weight: 600;
     margin: 21px 0px 0px 0px;
     background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
   
   input:focus, select:focus, textarea:focus {

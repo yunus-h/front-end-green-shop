@@ -47,7 +47,7 @@ const SignUpForm = () =>{
     }
 
     const isFormInvalid = () => {
-        if (!formData.username === '') {
+        if (formData.username === '') {
             return true
         }
 

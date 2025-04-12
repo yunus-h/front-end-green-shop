@@ -5,7 +5,10 @@ import styles from "./ReviewForm.module.css"
 
 const ReviewForm = (props) => {
 
-    const [formData, setFormData] = useState({ text: '' });
+    const [formData, setFormData] = useState({ 
+                                        rating: '',
+                                        text: '' 
+                                    });
 
     const { productId, reviewId } = useParams();
     console.log(productId, reviewId);
