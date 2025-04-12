@@ -6,7 +6,7 @@ import styles from "./ReviewForm.module.css"
 const ReviewForm = (props) => {
 
     const [formData, setFormData] = useState({ 
-                                        rating: '',
+                                        rating: 5,
                                         text: '' 
                                     });
 
@@ -28,15 +28,15 @@ const ReviewForm = (props) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
     };
 
-    const handleSubmit = (evt) => {
+    const handleSubmit = async (evt) => {
         evt.preventDefault();
         if (productId && reviewId) {
-            productService.updateReview(productId, reviewId, formData);
+            await productService.updateReview(productId, reviewId, formData);
             navigate(`/products/${productId}`);
           } else {
             props.handleAddReview(formData);
           }
-          setFormData({ rating:'',text: '' });
+          setFormData({ rating:5 ,text: '' });
         };
 
     return (

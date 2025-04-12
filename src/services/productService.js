@@ -110,6 +110,7 @@ const deleteReview = async (productId, reviewId) => {
 
   const updateReview = async (productId, reviewId, reviewFormData) => {
     try {
+        console.log(productId, reviewId, reviewFormData)
       const res = await fetch(`${BASE_URL}/${productId}/reviews/${reviewId}`, {
         method: 'PUT',
         headers: {

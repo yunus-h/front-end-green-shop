@@ -113,7 +113,8 @@ const ProductDetails = (props) => {
                             </p>
                             <h4>Rating: {review.rating}</h4>
                             <p>{review.text}</p>
-                            <section>
+                            
+                            <div>
                                 {review.author._id === user._id && (
                                 <>
                                     <Link to={`/products/${productId}/reviews/${review._id}/edit`}>Edit Review</Link>          
@@ -123,7 +124,8 @@ const ProductDetails = (props) => {
                                     </button>
                                 </>
                                 )}
-                            </section>
+                            </div>
+                      
                         </div>
                         
                         
